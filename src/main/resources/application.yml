@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/helmesdb
+    username: postgres
+    password: postgres
+
+    initialization-mode: always

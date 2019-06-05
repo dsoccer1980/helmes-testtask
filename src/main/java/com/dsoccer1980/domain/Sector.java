@@ -16,6 +16,9 @@ public class Sector {
 
     @Id
     private int id;
+
+    @Column(name = "parent_id")
     private int parentId;
+
     private String name;
 }

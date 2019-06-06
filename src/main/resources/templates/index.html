@@ -2,32 +2,44 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Testtask</title>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
 </head>
 
 <body>
 Please enter your name and pick the Sectors you are currently involved in.
 <br>
 <br>
-Name:
-<input type="text">
-<br>
-<br>
-Sectors:
-Sectors: <select name="sectors" multiple="multiple" size="10" required>
+
+<form method="post" action="accept" name="myForm">
+
+    <input type="hidden" name="id" th:value="${id}">
+
+    Name:  <input type="text" name="name" th:value="${name}" required> <br><br>
+
+    Sectors: <select name="sectors" multiple="multiple" size="10" required>
     <option th:each="sector: ${sectors_dto}"
             th:value="${sector.id}"
-            th:selected="${sector.isSelected()}"
-            th:text="${sector.name}">
+            th:selected="${sector.isSelected()}">
+        <p th:if="${sector.level == 0}"  th:text="${sector.name}"></p>
+        <p th:if="${sector.level == 1}"  th:text="'&nbsp;&nbsp;&nbsp;&nbsp;' + ${sector.name}"></p>
+        <p th:if="${sector.level == 2}"  th:text="'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + ${sector.name}"></p>
+        <p th:if="${sector.level == 3}"  th:text="'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + ${sector.name}"></p>
+
     </option>
 </select>
 
-<br>
-<br>
-<input type="checkbox"> Agree to terms
+    <br>
+    <br>
 
-<br>
-<br>
-<input type="submit" value="Save">
+    <input type="checkbox" name="isAgree" th:checked="${is_agree}" required>  Agree to terms
+
+    <br>
+    <br>
+
+    <input type="submit" value="Save" id="submitButton">
+</form>
+
+
+
 </body>
 </html>

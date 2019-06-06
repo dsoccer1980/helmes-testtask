@@ -5,11 +5,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "user_data")
 public class UserData {
     public static final int START_SEQ = 10000;
 
@@ -18,11 +21,16 @@ public class UserData {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "global_seq")
     private int id;
 
+    @Column(name = "name")
+    @NotBlank
+    @Size(max = 50)
     private String name;
 
     @Column(name = "is_agree")
     private boolean isAgree;
 
+    @Column(name = "sectors")
+    @NotBlank
     private String sectors;
 
     public UserData(String name, boolean isAgree, String sectors) {

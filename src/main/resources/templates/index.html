@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org"/>
+    <title>Testtask</title>
+    <meta charset="UTF-8" />
 </head>
 
 <body>
@@ -13,14 +14,12 @@ Name:
 <br>
 <br>
 Sectors:
-<select multiple="" size="50">
-    <option value="1">Manufacturing</option>
-    <option value="19">&nbsp;&nbsp;&nbsp;&nbsp;Construction materials</option>
-    <option value="18">&nbsp;&nbsp;&nbsp;&nbsp;Electronics and Optics</option>
-    <option value="6">&nbsp;&nbsp;&nbsp;&nbsp;Food and Beverage</option>
-    <option value="342">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bakery &amp; confectionery products</option>
-    <option value="43">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Beverages</option>
-    <option value="42">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fish &amp; fish products </option>
+Sectors: <select name="sectors" multiple="multiple" size="10" required>
+    <option th:each="sector: ${sectors_dto}"
+            th:value="${sector.id}"
+            th:selected="${sector.isSelected()}"
+            th:text="${sector.name}">
+    </option>
 </select>
 
 <br>

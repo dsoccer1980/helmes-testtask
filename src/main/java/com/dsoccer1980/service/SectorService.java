@@ -17,8 +17,20 @@ public class SectorService {
         this.repository = repository;
     }
 
+    public List<Sector> getAllSectors() {
+        return repository.findAll();
+    }
+
     public List<Sector> getSectorsByParentId(int id) {
         return repository.findAllByParentId(id);
+    }
+
+    public Sector save(Sector sector) {
+        return repository.save(sector);
+    }
+
+    public void deleteAll() {
+        repository.deleteAll();
     }
 
     public List<SectorDto> getSectorDtoList() {

@@ -1,0 +1,9 @@
+DELETE FROM Sector;
+
+
+
+
+
+
+
+

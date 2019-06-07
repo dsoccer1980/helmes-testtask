@@ -4,6 +4,7 @@
 Used stack: Spring Boot, Spring Data JPA, PostgreSql<br><br>
 
 Before program is executed, database in PostgreSql should be created. <br>
+Database dumb is attached with file helmesdb.backup  <br><br>
 Currently specified settings. <br>
 database name:helmesdb <br>
 username: postgres <br>

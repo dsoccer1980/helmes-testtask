@@ -4,7 +4,7 @@ spring:
     username: postgres
     password: postgres
 
-    initialization-mode: always # put 'never' for production
+    initialization-mode: never # put 'always' for creating tables at initial state
 
 
   jpa:

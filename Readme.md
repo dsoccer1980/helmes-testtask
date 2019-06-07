@@ -1,5 +1,5 @@
 
-#Testtask
+# Testtask
 
 Used stack: Spring Boot, Spring Data JPA, PostgreSql<br><br>
 
@@ -10,7 +10,7 @@ username: postgres <br>
 password: postgres <br>
 They can be changed in file application.yml <br>
 
-
+The task:
 1. Correct all of the deficiencies in index.html <br>
 
 2. "Sectors" selectbox: <br>
